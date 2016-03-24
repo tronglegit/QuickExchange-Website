@@ -23,11 +23,8 @@ class ShareModel extends Model{
 			$this->bind(':contactphone', $post['contactphone']);
 			$this->bind(':contactemail', $post['contactemail']);
 			$this->execute();
-			// Verify
-			if($this->lastInsertId()){
-				// Redirect
-				header('Location: '.ROOT_URL.'posts');
-			}
+			// redirect
+			header('Location: '.ROOT_PATH.'posts');
 		}
 		return;
 	}
